@@ -5,14 +5,26 @@ public class Clerigo {
     int ataque;
     int defesa;
     int fe;
-    PoderDivino poderDivino;
 
-    public Clerigo(String nome, int vida, int ataque, int defesa, int fe, PoderDivino poderDivino) {
+    public Clerigo(String nome, int vida, int ataque, int defesa, int fe) {
         this.nome = nome;
         this.vida = vida;
         this.ataque = ataque;
         this.defesa = defesa;
         this.fe = fe;
-        this.poderDivino = poderDivino;
+    }
+
+    int atacar(Barbaro atacado, PoderDivino poderDivinoUtilizado) {
+        int dano = poderDivinoUtilizado.intensidade * ataque - atacado.defesa;
+        atacado.vida = atacado.vida - dano;
+        this.fe = fe - poderDivinoUtilizado.custoDeFe;
+        return dano;
+    }
+
+    int atacar(Guerreiro atacado, PoderDivino poderDivinoUtilizado) {
+        int dano = poderDivinoUtilizado.intensidade * ataque - atacado.defesa;
+        atacado.vida = atacado.vida - dano;
+        this.fe = fe - poderDivinoUtilizado.custoDeFe;
+        return dano;
     }
 }

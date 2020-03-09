@@ -4,15 +4,23 @@ public class Guerreiro {
     int vida;
     int ataque;
     int defesa;
-    Arma arma;
 
-
-    public Guerreiro(String nome, int vida, int ataque, int defesa, Arma arma) {
+    public Guerreiro(String nome, int vida, int ataque, int defesa) {
         this.nome = nome;
         this.vida = vida;
         this.ataque = ataque;
         this.defesa = defesa;
-        this.arma = arma;
+    }
 
+    int atacar(Barbaro atacado, Arma armaUtilizada) {
+        int dano = armaUtilizada.poderDeAtaque * ataque - atacado.defesa;
+        atacado.vida = atacado.vida - dano;
+        return dano;
+    }
+
+    int atacar(Mago atacado, Arma armaUtilizada) {
+        int dano = armaUtilizada.poderDeAtaque * ataque - atacado.defesa;
+        atacado.vida = atacado.vida - dano;
+        return dano;
     }
 }
