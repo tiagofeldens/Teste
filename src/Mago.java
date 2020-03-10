@@ -14,17 +14,25 @@ public class Mago {
         this.mana = mana;
     }
 
-    int atacar (Feiticeiro atacado, Magia magiaUtilizada) {
+    int atacar(Feiticeiro atacado, Magia magiaUtilizada) {
         int dano = magiaUtilizada.poder * ataque - atacado.defesa;
+        if (this.mana < magiaUtilizada.custoDeMana) {
+            dano = 0;
+        }
+
         atacado.vida = atacado.vida - dano;
-        this.mana = mana -magiaUtilizada.custoDeMana;
+
+        if (this.mana > magiaUtilizada.custoDeMana) {
+            this.mana = mana - magiaUtilizada.custoDeMana;
+        };
+
         return dano;
     }
 
-    int atacar (Druida atacado, Magia magiaUtilizada) {
+    int atacar(Druida atacado, Magia magiaUtilizada) {
         int dano = magiaUtilizada.poder * ataque - atacado.defesa;
         atacado.vida = atacado.vida - dano;
-        this.mana = mana -magiaUtilizada.custoDeMana;
+        this.mana = mana - magiaUtilizada.custoDeMana;
         return dano;
     }
 }

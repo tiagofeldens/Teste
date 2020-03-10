@@ -14,6 +14,10 @@ public class Guerreiro {
 
     int atacar(Barbaro atacado, Arma armaUtilizada) {
         int dano = armaUtilizada.poderDeAtaque * ataque - atacado.defesa;
+
+        if (atacado.vida == 0 || this.vida == 0) {
+            dano = 0;
+        }
         atacado.vida = atacado.vida - dano;
         return dano;
     }

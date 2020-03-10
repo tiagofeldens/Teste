@@ -19,6 +19,8 @@ public class App {
 
         int dano = ramza.atacar(ragnar, machado);
         System.out.println(ramza.nome + " atacou " + ragnar.nome + " com o " + machado.nome + " causando dano de " + dano);
+        if (ragnar.vida == 0) {
+            System.out.println("Ragnar morreu!");
         dano = ramza.atacar(floki, espada);
         System.out.println(ramza.nome + " atacou " + floki.nome + " com a " + espada.nome + " causando dano de " + dano);
         dano = ragnar.atacar(floki, machado);
