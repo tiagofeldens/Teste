@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "66de8544-696b-4293-a820-7afcda8c62f7",
+		"name": "Desafio Técnico CWI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pauta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"pauta\": \"Fora Bolsonaro\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pauta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pauta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Voto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"idAssociado\": \"5\",\n\"idPauta\": \"1\",\n\"voto\": \"SIM\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pauta/1/votar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pauta",
+						"1",
+						"votar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sessão",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"tempo\": \"2\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pauta/1/criarSessao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pauta",
+						"1",
+						"criarSessao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contar Votos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pauta/1/contarVotos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pauta",
+						"1",
+						"contarVotos"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
